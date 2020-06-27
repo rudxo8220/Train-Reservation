@@ -143,7 +143,7 @@ class Train:
         print("2. 뒤로가기")
         reserved_train_menu = input("입력 : ")
         if reserved_train_menu == "1":
-            print("\n==== 예매 내역 ====\n")
+            print("\n 예매 내역 \n")
 
             i = 0
             while i < len(reservation_list):
@@ -153,10 +153,10 @@ class Train:
                 print(reservation_list)
 
                 if ind is not None or reservation_list is not 0:
-                    cancel = input("\n예매를 취소하시겠습니까? [Y/N]"
+                    cancel = input("\n예매를 취소하시겠습니까? [Y(y)/N(n)]"
                                    "\n입력 : ")
 
-                    if cancel == 'Y':
+                    if cancel == 'Y' or cancel == 'y':
                         if List[indlist[len(indlist) - 1]][5] == '매진':
                             List[indlist[len(indlist) - 1]][5] = 1
                             reservation_list.pop()
