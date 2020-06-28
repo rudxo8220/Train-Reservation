@@ -107,7 +107,8 @@ class Train:
                         self.train_menu
                    
                 elif (reservation == "N") or (reservation =='n'):
-                    break
+                    print("메뉴로 돌아갑니다.")
+                    self.train_menu()
                 else:
                     print("Y(y) 또는 N(n)을 입력하세요")
             return ind, reservation_list
@@ -157,7 +158,7 @@ class Train:
                                    "\n입력 : ")
 
                     if cancel == 'Y' or cancel == 'y':
-                        if List[indlist[len(indlist) - 1]][5] == '매진':
+                        if List[indlist[len(indlist) - 1]][5] == 0:
                             List[indlist[len(indlist) - 1]][5] = 1
                             reservation_list.pop()
                         else:
@@ -165,8 +166,10 @@ class Train:
                             reservation_list.pop()
                         indlist.pop()
                         print('\n취소가 완료되었습니다.')
+                    elif cancel == 'N' or cancel == 'n':
+                        break
                 else:
-                    self.train_menu()
+                    self.reserved_train()
 
 
 
