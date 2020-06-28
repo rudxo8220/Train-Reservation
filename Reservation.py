@@ -93,18 +93,18 @@ class Train:
                 reservation = input("\n해당 기차표를 예매하시겠습니까? [Y/N]"
                                     "\n입력 : ")
                 if (reservation == 'Y') or (reservation == 'y'):
-                    if List[ind][5] != 0:
+                    if (List[ind][5] != "매진"):
                         reservation_list.append(List[ind])
                         List[ind][5] = int(List[ind][5]) - 1
+                        if List[ind][5] == 0:
+                            List[ind][5] = "매진"
                         print("\n예매가 완료되었습니다.")
                         print("\n메뉴로 돌아갑니다.\n")
                         indlist.append(ind)
                         break
-                    elif List[ind][5] == 0:
-                        List[ind][5] = "매진"
-                        print("매진된 좌석입니다.")
-                        print("\n메뉴로 돌아갑니다.\n")
-                        break
+                    else:
+                        print("매진된 좌석입니다. 메뉴로 돌아갑니다.")
+                        self.train_menu
                    
                 elif (reservation == "N") or (reservation =='n'):
                     break
